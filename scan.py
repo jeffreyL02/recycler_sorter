@@ -7,14 +7,17 @@ thresholding for each given soda brand's ranges
 import cv2 as cv
 import numpy as np
 
+# Only works with these brands or others with very similar colors
 SODA_NAMES = ['Coke', 'Sprite', 'Fanta']
 # SODA_COLOR_RANGES contains HSV values of soda brands, with respect to 
-# SODA_NAMES 
+# SODA_NAMES. Need to be calibrated for different light levels
 SODA_COLOR_RANGES = np.array([
                             [[[0,207,38], [179,255,193]]],
                             [[[24, 0, 33], [142, 255, 255]]],
                             [[[8, 187, 121],[30, 255, 255]]]
                         ])
+# Minimum value to be considered major part of object(e.g. cap, label, 
+# logo)
 MIN_CAP_AREA = 500
 
 """

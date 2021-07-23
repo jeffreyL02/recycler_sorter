@@ -1,6 +1,11 @@
+"""
+Main file that takes an image from the webcam and analyzes its color 
+(brand) using scan.py and type with detector.py. Returns the name of 
+the soda bottle or can.
+"""
+
 import cv2 as cv
 from scan import scanner
-from time import sleep
 import detector
 
 """
@@ -13,7 +18,11 @@ def takeImage():
     cv.destroyAllWindows()
     return image
 
-
+"""
+Takes and saves an image. Image scanned for colors to determine the 
+brand. Saved image passed into rekognition to detect can or bottle. Finds
+the name of the obj in image (e.g. sprite can, coke bottle, etc.)
+"""
 if __name__ == "__main__":
     frame = takeImage()
     saved_frame = detector.save(frame)
