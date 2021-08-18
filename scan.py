@@ -12,9 +12,9 @@ SODA_NAMES = ['Coke', 'Sprite', 'Fanta']
 # SODA_COLOR_RANGES contains HSV values of soda brands, with respect to 
 # SODA_NAMES. Need to be calibrated for different light levels
 SODA_COLOR_RANGES = np.array([
-                            [[[0,207,38], [179,255,193]]],
-                            [[[24, 0, 33], [142, 255, 255]]],
-                            [[[8, 187, 121],[30, 255, 255]]]
+                            [[[0,161 ,16], [7,255,255]]],
+                            [[[30, 89, 17], [98, 255, 255]]],
+                            [[[10, 118, 67],[46, 255, 255]]]
                         ])
 # Minimum value to be considered major part of object(e.g. cap, label, 
 # logo)
@@ -54,7 +54,7 @@ picture: picture to be scanned for each soda brand's color range
 
 Return a dictionary of areas corresponding to each soda brand
 """
-def scanner(picture):
+def scan_brand(picture):
     #list of brand name has to be coordinated with allColors
     img_areas = {}
     for i in range(len(SODA_NAMES)):
